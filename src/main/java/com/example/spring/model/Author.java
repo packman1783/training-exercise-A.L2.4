@@ -41,4 +41,37 @@ public class Author implements BaseEntity {
     @OneToMany(mappedBy = "author",
             cascade = CascadeType.ALL)
     private List<Book> books = new ArrayList<>();
+
+    public long getId() {
+        return id;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }
