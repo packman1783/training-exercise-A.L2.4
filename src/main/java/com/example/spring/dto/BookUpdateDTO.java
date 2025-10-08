@@ -20,6 +20,10 @@ public class BookUpdateDTO {
         this.title = title;
     }
 
+    public JsonNullable<Long> getAuthorId() {
+        return authorId;
+    }
+
     public void setAuthorId(JsonNullable<Long> authorId) {
         this.authorId = authorId;
     }

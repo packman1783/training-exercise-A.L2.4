@@ -21,4 +21,8 @@ public class BookCreateDTO {
     public Long getAuthorId() {
         return authorId;
     }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
 }
