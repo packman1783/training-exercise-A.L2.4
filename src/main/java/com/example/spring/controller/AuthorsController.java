@@ -3,7 +3,6 @@ package com.example.spring.controller;
 import com.example.spring.dto.AuthorCreateDTO;
 import com.example.spring.dto.AuthorDTO;
 import com.example.spring.dto.AuthorUpdateDTO;
-import com.example.spring.model.Author;
 import com.example.spring.service.AuthorService;
 
 import jakarta.validation.Valid;
