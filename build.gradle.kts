@@ -26,17 +26,16 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
+    implementation("org.mapstruct:mapstruct:1.6.3")
     testAnnotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 
-    implementation("org.mapstruct:mapstruct:1.6.3")
     implementation("org.openapitools:jackson-databind-nullable:0.2.6")
 
+    implementation("org.postgresql:postgresql")
     runtimeOnly("com.h2database:h2")
 
     testImplementation("net.javacrumbs.json-unit:json-unit-assertj:4.1.1")
-
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
