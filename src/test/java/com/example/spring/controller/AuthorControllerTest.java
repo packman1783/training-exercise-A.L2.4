@@ -7,7 +7,6 @@ import com.example.spring.repository.AuthorRepository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jakarta.transaction.Transactional;
 import java.util.HashMap;
 
 import org.junit.jupiter.api.BeforeEach;
