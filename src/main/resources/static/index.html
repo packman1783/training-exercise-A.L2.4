@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Library App</title>
+    <style>
+        body { font-family: Arial; margin: 2rem; }
+        h2 { margin-top: 2rem; }
+        input, button { margin: 0.5rem 0; }
+        table { border-collapse: collapse; margin-top: 1rem; }
+        td, th { border: 1px solid #ccc; padding: 0.5rem; }
+    </style>
+</head>
+<body>
+<h1>📚 Library App</h1>
+
+<h2>Authors</h2>
+<div>
+    <input id="firstName" placeholder="First Name">
+    <input id="lastName" placeholder="Last Name">
+    <button onclick="createAuthor()">Add Author</button>
+</div>
+<table id="authorsTable">
+    <thead><tr><th>ID</th><th>Name</th></tr></thead>
+    <tbody></tbody>
+</table>
+
+<h2>Books</h2>
+<div>
+    <input id="bookTitle" placeholder="Book Title">
+    <input id="bookAuthorId" placeholder="Author ID">
+    <button onclick="createBook()">Add Book</button>
+</div>
+<table id="booksTable">
+    <thead><tr><th>ID</th><th>Title</th><th>Author</th></tr></thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    async function loadAuthors() {
+      const res = await fetch('/authors');
+      const data = await res.json();
+      const tbody = document.querySelector('#authorsTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(a => {
+        tbody.innerHTML += `<tr><td>${a.id}</td><td>${a.firstName} ${a.lastName}</td></tr>`;
+      });
+    }
+
+    async function loadBooks() {
+      const res = await fetch('/books');
+      const data = await res.json();
+      const tbody = document.querySelector('#booksTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(b => {
+        tbody.innerHTML += `<tr><td>${b.id}</td><td>${b.title}</td><td>${b.authorFirstName} ${b.authorLastName}</td></tr>`;
+      });
+    }
+
+    async function createAuthor() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      await fetch('/authors', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({firstName, lastName})
+      });
+      loadAuthors();
+    }
+
+    async function createBook() {
+      const title = document.getElementById('bookTitle').value;
+      const authorId = document.getElementById('bookAuthorId').value;
+      await fetch('/books', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({title, authorId})
+      });
+      loadBooks();
+    }
+
+    loadAuthors();
+    loadBooks();
+</script>
+</body>
+</html>
