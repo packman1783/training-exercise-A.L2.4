@@ -9,7 +9,6 @@ public class BookUpdateDTO {
     @NotNull
     JsonNullable<Long> authorId;
 
-    @NotBlank
     JsonNullable<String> title;
 
     public JsonNullable<String> getTitle() {
