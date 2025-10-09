@@ -28,7 +28,15 @@ public class AuthorDTO {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public LocalDate getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
     }
 }
