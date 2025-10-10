@@ -5,9 +5,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-//По умолчанию MapStruct ничего не знает о JsonNullable. Чтобы добавить нужную нам условную логику,
-// проверяющую наличие реального значения, надо добавить специальный маппер
-
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public abstract class JsonNullableMapper {
     public <T> JsonNullable<T> wrap(T entity) {

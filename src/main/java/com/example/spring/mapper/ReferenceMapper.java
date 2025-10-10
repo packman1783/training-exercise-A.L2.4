@@ -10,8 +10,6 @@ import org.mapstruct.TargetType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-//конвертация из DTO в свойство, чтобы выполнить эту операцию, нужно сделать запрос в базу данных и извлечь объект
-
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public abstract class ReferenceMapper {
     @Autowired

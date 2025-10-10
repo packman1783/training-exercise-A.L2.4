@@ -9,8 +9,6 @@ import org.openapitools.jackson.nullable.JsonNullableModule;
 
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-// модуль jackson-databind-nullable в связке с MapStruct нужен для частичного обновления
-
 @Configuration
 public class JacksonConfig {
     @Bean
