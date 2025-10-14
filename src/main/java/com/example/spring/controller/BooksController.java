@@ -27,7 +27,7 @@ public class BooksController {
     @Autowired
     private BookService bookService;
 
-    @GetMapping("")
+    @GetMapping
     public List<BookDTO> index() {
         return bookService.getAll();
     }
@@ -37,7 +37,7 @@ public class BooksController {
         return bookService.findById(id);
     }
 
-    @PostMapping("")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public BookDTO create(@Valid @RequestBody BookCreateDTO data) {
         return bookService.create(data);

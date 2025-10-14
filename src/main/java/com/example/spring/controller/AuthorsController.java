@@ -27,7 +27,7 @@ public class AuthorsController {
     @Autowired
     private AuthorService authorService;
 
-    @GetMapping("")
+    @GetMapping
     public List<AuthorDTO> index() {
         return authorService.getAll();
     }
